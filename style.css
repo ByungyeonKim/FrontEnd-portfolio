@@ -441,6 +441,10 @@ footer {
   }
 
   /* 자기소개 */
+  .about-section {
+    padding: 16px 0;
+  }
+
   .about-content {
     max-width: 425px;
   }
