@@ -18,7 +18,7 @@ h2, h3, h4, h5, h6, em, strong, address {
 
 body {
   font: 'Apple SD Gothic Neo', 'Open Sans', sans-serif, '돋움', Dotum;
-  background-color: #fafafa;
+  background: url(./image/pattern.png);
 }
 
 a {
@@ -35,7 +35,8 @@ header {
 
   transition: transform 400ms ease-in-out 0s,
     background-color 400ms ease-in-out 0s;
-  background-color: transparent;
+  background-color: #fff;
+  border-bottom: 2px solid rgba(188, 188, 188, 0.5);
   z-index: 999;
 }
 
@@ -79,11 +80,42 @@ header {
 
 /* 섹션 공통 속성 */
 section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 64px;
+  background-color: #fff;
+  min-height: 640px;
+
+  border-left: 2px solid rgba(188, 188, 188, 0.5);
+  border-right: 2px solid rgba(188, 188, 188, 0.5);
+  border-bottom: 2px dotted rgba(188, 188, 188, 0.5);
+  border-radius: 12px 0 0 12px;
+}
+
+section:not(:first-child) {
+  padding: 64px 0;
+}
+
+section:nth-last-of-type(1) {
+  border-bottom: 2px solid rgba(188, 188, 188, 0.5);
+  border-radius: 12px 0 8px 12px;
+}
+
+section:not(:nth-last-of-type(1))::after {
+  position: absolute;
+  content: '✂︎';
+  bottom: -15px;
+  left: 10px;
+  z-index: 1;
+  font-size: 2.1rem;
+}
+
+section,
+footer {
+  max-width: 940px;
+  margin: auto;
 }
 
 .title {
@@ -104,10 +136,11 @@ section {
 
 mark {
   font-size: 90%;
+  color: #fff;
 
-  background-color: cornflowerblue;
+  background-color: #333;
   border-radius: 4px;
-  padding: 1.5px 4px;
+  padding: 3px 6px;
 }
 
 .grid-wrap {
@@ -153,7 +186,7 @@ footer {
 
 /* 인트로 */
 .intro-section {
-  margin-top: 80px;
+  padding-top: 80px;
   text-align: center;
 }
 
@@ -207,19 +240,11 @@ footer {
   }
 }
 
-/* 자기소개 */
-.about-section {
-  height: 550px;
-  color: #fff;
-
-  background-color: #000c24;
-  border-radius: 4px;
-}
-
-.grow-icon {
-  width: 150px;
-  height: 150px;
+.about-me {
+  width: 250px;
+  height: 200px;
   margin-top: 32px;
+  background: url(./image/about.png);
 }
 
 .about-content {
@@ -231,11 +256,6 @@ footer {
   padding: 32px;
 }
 
-/* 기술 */
-.skill-section {
-  min-height: 690px;
-}
-
 /* 자기소개 자세히 */
 .personal {
   max-width: 565px;
@@ -244,19 +264,13 @@ footer {
   margin: 12px 0;
 }
 
-/* 프로젝트 */
-.project-section {
-  min-height: 650px;
-}
-
 /* 푸터 */
 footer {
   position: relative;
-  max-width: 640px;
   text-align: center;
+  font-size: 2.1rem;
   font-weight: 300;
   padding: 84px 0;
-  margin: auto;
   color: #212121;
 }
 
@@ -264,7 +278,7 @@ footer {
 .nav-menu {
   position: fixed;
   top: 12%;
-  right: 5%;
+  right: 0;
   width: 320px;
   height: 100%;
 
@@ -378,7 +392,10 @@ footer {
 @media (max-width: 768px) {
   section {
     font-size: 1.4rem;
-    padding: 0 32px;
+  }
+
+  section:not(:first-child) {
+    padding: 32px 16px;
   }
 
   .title {
@@ -412,16 +429,25 @@ footer {
   .grid-right ol,
   .about-content,
   .title-sub {
+    font-size: 1.4rem;
     word-break: keep-all;
   }
 
   /* 헤더 */
+  .header-container {
+    height: 50px;
+  }
+
   .goals,
   .icons {
     font-size: 1.2rem;
   }
 
   /* 인트로 */
+  .intro-section {
+    padding-top: 42px;
+  }
+
   .avatar {
     width: 250px;
     height: 250px;
@@ -429,7 +455,7 @@ footer {
   }
 
   .intro {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     margin-top: 21px;
   }
 
@@ -439,26 +465,28 @@ footer {
 
   .scroll-into-about {
     font-size: 1.4rem;
+    padding: 8px 12px;
     margin-top: 42px;
   }
 
-  /* 자기소개 */
-  .about-section {
-    padding: 16px 0;
-  }
-
-  .about-content {
-    max-width: 425px;
+  .arrow-down {
+    margin: 25px 0 45px;
   }
 
   /* 자기소개 자세히 */
-  .personal-section {
-    max-width: 450px;
-    margin: auto;
+  .personal {
+    font-size: 1.4rem;
+    padding: 16px;
   }
 
   /* 맨 위로가기 버튼 */
   .arrow-up {
-    right: 30px;
+    top: 130px;
+    right: 40px;
+  }
+
+  /* 푸터 */
+  footer {
+    font-size: 1.8rem;
   }
 }
