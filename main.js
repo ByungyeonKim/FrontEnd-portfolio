@@ -16,18 +16,10 @@ const scrollEvent = () => {
     let scrollTop = document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
-      header.style.transform = 'translateY(-68px)';
+      header.style.transform = 'translateY(-70px)';
     } else {
       header.style.transform = 'translateY(0px)';
     }
-
-    if (scrollTop > 0) {
-      header.style.backgroundColor = '#fff';
-    } else {
-      header.style.backgroundColor = 'transparent';
-      scrollTop = 8;
-    }
-
     lastScrollTop = scrollTop;
   });
 };
@@ -39,7 +31,7 @@ const scrollIntoAbout = document.querySelector('.scroll-into-about');
 
 const scrollIntoView = (selector) => {
   const scrollInto = document.querySelector(selector);
-  scrollInto.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  scrollInto.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
 navMenu.addEventListener('click', (event) => {
@@ -64,14 +56,13 @@ scrollIntoAbout.addEventListener('click', () => {
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.menu-list li');
 const manuList = document.querySelector('.menu-list');
-const sectionIds = [];
-sections.forEach((section) => sectionIds.push(section.id));
+const sectionIds = [...sections].map((section) => section.id);
 let navItem = navItems[0];
 
 const observerOptions = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.5,
+  threshold: 0.6,
 };
 
 const observerCallback = (entries) => {
@@ -79,13 +70,13 @@ const observerCallback = (entries) => {
     if (entry.isIntersecting && entry.intersectionRatio > 0) {
       const index = sectionIds.indexOf(entry.target.id);
       navItem = navItems[index];
-      if (entry.boundingClientRect.y > 0) {
-        navItem.style.color = 'cornflowerblue';
-        navItem.style.transform = 'scale(1.1)';
+      navItem.style.color = 'cornflowerblue';
+
+      if (index == 6) {
+        navItem = navItems[index - 1];
       } else {
         navItem = navItems[index + 1];
         navItem.style.color = '#868e96';
-        navItem.style.transform = 'scale(1)';
       }
     }
   });
