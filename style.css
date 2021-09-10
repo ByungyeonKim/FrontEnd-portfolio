@@ -356,16 +356,13 @@ footer {
   color: cornflowerblue;
 }
 
-.fa-copy {
-  background: transparent;
-}
-
 .tooltip {
   position: fixed;
   text-align: center;
   left: 50%;
   bottom: 15px;
   transform: translate(-50%, 150%);
+  font-size: 1.6rem;
 
   color: #fff;
   width: 60%;
