@@ -4,7 +4,7 @@ const arrowUp = document.querySelector('.arrow-up');
 const navMenu = document.querySelector('.nav-menu');
 const scrollIntoView = (selector) => {
   const scrollInto = document.querySelector(selector);
-  scrollInto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollInto.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
 export function showAndHideHeader() {
