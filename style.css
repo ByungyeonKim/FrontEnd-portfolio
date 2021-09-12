@@ -2,34 +2,21 @@
 @charset "UTF-8";
 
 :root {
-  --fs--xl: 2rem;
-  --fs--600: 1.5rem;
-  --fs--500: 1.25rem;
-  --fs--400: 1rem;
+  font-size: 62.5%;
+
+  --fs--xl: 3.2rem;
+  --fs--600: 2.4rem;
+  --fs--500: 2rem;
+  --fs--400: 1.6rem;
 }
 
 @media (max-width: 40rem) {
   :root {
-    --fs--xl: 1.5rem;
-    --fs--600: 1.25rem;
-    --fs--500: 1rem;
-    --fs--400: 0.875rem;
+    --fs--xl: 2.4rem;
+    --fs--600: 2rem;
+    --fs--500: 1.6rem;
+    --fs--400: 1.4rem;
   }
-
-  section {
-    font-size: 0.875rem;
-  }
-}
-
-html, body, main, footer, div, span, p, h1, /* */
-h2, h3, h4, h5, h6, em, strong, address {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  box-sizing: border-box;
 }
 
 body {
@@ -37,9 +24,24 @@ body {
   background: url(./image/pattern.png);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+
+  box-sizing: border-box;
+  padding: 16px;
+}
+
 a {
   text-decoration: none;
   color: #111;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  font-size: inherit;
 }
 
 /* 헤더 */
@@ -49,23 +51,26 @@ header {
   left: 0px;
   right: 0px;
 
-  transition: transform 400ms ease-in-out 0s,
-    background-color 400ms ease-in-out 0s;
+  transition: transform 400ms ease-in-out 0s;
   background-color: #fff;
   border-bottom: 2px solid rgba(188, 188, 188, 0.5);
   z-index: 999;
 }
 
+header p {
+  margin: 0;
+}
+
 .header-container {
-  max-width: 980px;
-  margin: auto;
-
-  height: 68px;
-  padding: 10px 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  max-width: 940px;
+  height: 68px;
+  box-sizing: border-box;
+  padding: 0 32px;
+  margin: auto;
 }
 
 .goals {
@@ -77,9 +82,6 @@ header {
   display: flex;
   list-style: none;
   font-size: var(--fs--500);
-
-  margin: 0;
-  padding: 0;
 }
 
 .icon {
@@ -101,6 +103,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 1.6rem;
   background-color: #fff;
   min-height: 640px;
 
@@ -170,7 +173,11 @@ mark {
   font-size: var(--fs--600);
   font-weight: 500;
   word-break: break-all;
-  padding: 8px 0px 0px 72px;
+  padding: 8px 0 0 72px;
+}
+
+.grid-right {
+  padding-right: 32px;
 }
 
 .grid-right ul,
@@ -179,6 +186,7 @@ mark {
   color: #333;
 
   margin-top: 0;
+  padding-left: 48px;
 }
 
 .language-list li {
@@ -259,6 +267,7 @@ mark {
   letter-spacing: -0.04em;
   text-align: center;
 
+  box-sizing: border-box;
   padding: 32px;
 }
 
@@ -275,7 +284,7 @@ footer {
   position: relative;
   text-align: center;
   font-size: var(--fs--500);
-  font-weight: 300;
+  font-weight: 500;
   padding: 84px 0;
   color: #212121;
 }
@@ -372,7 +381,7 @@ footer {
 
   color: #fff;
   width: 60%;
-  padding: 0.5em 0;
+  padding: 5px 0;
 
   border-radius: 4px;
   background-color: cornflowerblue;
@@ -392,14 +401,18 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 40rem) {
+  section {
+    font-size: 1.4rem;
+  }
+
   section:not(:first-child) {
     padding: 32px 16px;
   }
 
   .grid-left {
     position: relative;
-    min-width: 100%;
+    max-width: 100%;
     margin-bottom: 21px;
     padding-left: 25px;
     padding-bottom: 8px;
@@ -410,7 +423,7 @@ footer {
     position: absolute;
     bottom: 0;
     left: 21px;
-    width: calc(100% - 21px);
+    width: calc(100% - 50px);
     border-bottom: 3px dotted rgba(51, 51, 51, 0.5);
   }
 
@@ -434,12 +447,6 @@ footer {
   /* 인트로 */
   .intro-section {
     padding-top: 42px;
-  }
-
-  .avatar {
-    width: 250px;
-    height: 250px;
-    background: url(./image/avatar_m.png);
   }
 
   .intro {
