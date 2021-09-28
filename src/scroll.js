@@ -2,12 +2,13 @@ const header = document.querySelector('header');
 const aboutBtn = document.querySelector('.scroll-into-about');
 const arrowUp = document.querySelector('.arrow-up');
 const navMenu = document.querySelector('.nav-menu');
+
 const scrollIntoView = (selector) => {
   const scrollInto = document.querySelector(selector);
   scrollInto.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
-export function showAndHideHeader() {
+const showAndHideHeader = () => {
   let lastScrollTop = 0;
 
   window.addEventListener('scroll', () => {
@@ -20,21 +21,15 @@ export function showAndHideHeader() {
     }
     lastScrollTop = scrollTop;
   });
-}
+};
 
-export function scrollIntoTopBtn() {
+const scrollClickEvent = () => {
   arrowUp.addEventListener('click', () => {
     scrollIntoView('#intro');
   });
-}
-
-export function scrollIntoAbout() {
   aboutBtn.addEventListener('click', () => {
     scrollIntoView('#about');
   });
-}
-
-export function scrollIntoSection() {
   navMenu.addEventListener('click', (event) => {
     const target = event.target;
     const link = target.dataset.link;
@@ -43,4 +38,6 @@ export function scrollIntoSection() {
     }
     scrollIntoView(link);
   });
-}
+};
+
+export { showAndHideHeader, scrollClickEvent };

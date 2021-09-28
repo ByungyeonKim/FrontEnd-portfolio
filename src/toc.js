@@ -1,5 +1,3 @@
-import { scrollIntoSection } from './scroll.js';
-
 export default function toc() {
   const sections = document.querySelectorAll('section');
   const navItems = document.querySelectorAll('.menu-list li');
@@ -35,5 +33,4 @@ export default function toc() {
   );
 
   sections.forEach((section) => observer.observe(section));
-  scrollIntoSection();
 }

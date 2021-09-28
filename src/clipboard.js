@@ -1,4 +1,4 @@
-export function setClipboard() {
+const setClipboard = () => {
   const clipboard = new ClipboardJS('.copy-btn');
   const tooltip = document.querySelector('.tooltip');
 
@@ -19,4 +19,6 @@ export function setClipboard() {
     }, 1500);
     e.clearSelection();
   });
-}
+};
+
+export default setClipboard;

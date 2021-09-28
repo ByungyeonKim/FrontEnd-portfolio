@@ -1,6 +1,6 @@
+import { showAndHideHeader, scrollClickEvent } from './scroll.js';
 import toc from './toc.js';
-import * as scrollEvent from './scroll.js';
-import { setClipboard } from './clipboard.js';
+import setClipboard from './clipboard.js';
 
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
@@ -10,8 +10,7 @@ if (history.scrollRestoration) {
   };
 }
 
-scrollEvent.showAndHideHeader();
-scrollEvent.scrollIntoAbout();
-scrollEvent.scrollIntoTopBtn();
+showAndHideHeader();
+scrollClickEvent();
 toc();
 setClipboard();
