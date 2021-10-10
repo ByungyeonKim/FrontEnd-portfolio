@@ -6,7 +6,7 @@
 
 ---
 
-![portfolio](https://user-images.githubusercontent.com/66554164/136685257-909d3b4b-c0f1-4120-9057-a17f6aad941a.png)
+![portfolio](https://user-images.githubusercontent.com/66554164/136689878-9a833622-97fd-485d-a8ba-18cb06f57d86.png)
 
 - 모바일과 PC 화면 둘 다 최적화 되어 있습니다.
 - 목차를 구현하여 UX를 강화했습니다.
