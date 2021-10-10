@@ -11,7 +11,7 @@
 - 모바일과 PC 화면 둘 다 최적화 되어 있습니다.
 - 목차를 구현하여 UX를 강화했습니다.
 - 가독성이 좋게, 깔끔해 보이도록 신경을 썼습니다.
-- [사이트 구경하기](https://byungyeonkim.github.io/FrontEnd-portfolio/) 🌿
+- [사이트 구경하기](https://byungyeonkim.github.io/front-end-portfolio/) 🌿
 
 ---
 
